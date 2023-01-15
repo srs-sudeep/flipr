@@ -1,7 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const ejs = require("ejs");
+var _ = require('lodash');
 // const alert = require('alert');
+// var popupS = require('popupS');
 // var swal = require('sweetalert');
 // const popup = require('node-popup');
 // const popup = require('node-popup/dist/cjs.js');
@@ -62,7 +65,7 @@ app.post('/signin', function(req, res){
   }
 });
 });
-
+app.
 app.listen(3000, () => {
   console.log('Server started on port 3000!');
 });
