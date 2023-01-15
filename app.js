@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const ejs = require("ejs");
 var _ = require('lodash');
+import { readFile } from 'fs/promises';
 // const alert = require('alert');
 // var popupS = require('popupS');
 // var swal = require('sweetalert');
@@ -65,7 +66,14 @@ app.post('/signin', function(req, res){
   }
 });
 });
-app.
+
+app.get('/welcome',async function(req,res){
+  const data =  await readFile(
+      new URL('./NSE.json', import.meta.url)
+    );
+  res.render('welcome',{data:data[-1]})
+})
+
 app.listen(3000, () => {
   console.log('Server started on port 3000!');
 });
